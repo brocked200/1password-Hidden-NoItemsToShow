@@ -1,6 +1,6 @@
 # Remove "No items to show" message from 1Password extension
 
-A cross-platform Python utility to modify Chrome extension with ID `aeblfdkhhhdcdjpifhhbdiojplfjncoa` (1Password – Password Manager) by updating specific UI components to improve user experience.
+A cross-platform Python utility to modify Chrome extension with ID `aeblfdkhhhdcdjpifhhbdiojplfjncoa` (**1Password – Password Manager**) by updating specific UI components to improve user experience.
 
 ## Table of Contents
 - [Features](#features)
@@ -69,13 +69,13 @@ If you prefer to make the changes manually, follow these steps:
 
 3. Modify the `menu.html` file:
    - Path: `<version_folder>/inline/menu/menu.html`
-   - Replace:
+   - Match:
      ```html
      <body>
          <script type="module" src="./menu.js"></script>
      </body>
      ```
-   - With:
+   - Replace:
      ```html
      <body>
      </body>
@@ -84,11 +84,11 @@ If you prefer to make the changes manually, follow these steps:
 
 4. Modify the `menu.js` file:
    - Path: `<version_folder>/inline/menu/menu.js`
-   - Replace:
+   - Match:
      ```javascript
      function _k(e){let n,r;return{c(){n=R("section"),r=R("p"),r.textContent=`${e[2]("No items to show.")}`,h(n,"class","emptyItemList")},m(t,o){E(t,n,o),H(n,r)},p:S,i:S,o:S,d(t){t&&C(n)}}}
      ```
-   - With:
+   - Replace:
      ```javascript
      function _k(e){return{c(){},m(t,o){document.body.style.display='none'},p:S,i:S,o:S,d(t){document.body.style.display=''}}}
      ```
